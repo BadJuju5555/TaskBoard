@@ -4,6 +4,7 @@ using System.Windows.Input;
 using TaskBoard.Models;
 using TaskBoard.ViewModels;
 using TaskBoard.Services;
+using TaskBoard.Views;
 
 namespace TaskBoard.ViewModels;
 
@@ -36,7 +37,7 @@ public class KanbanColumnViewModel : BaseViewModel
         // Öffnet den TaskCreationWindow zur detaillierten Aufgabenerfassung
         TaskCreationWindow window = new TaskCreationWindow();
         var viewModel = new TaskCreationViewModel(window);
-        window.Datacontext = viewModel;
+        window.DataContext = viewModel;
         window.Owner = Application.Current.MainWindow;
         bool? result = window.ShowDialog();
 
